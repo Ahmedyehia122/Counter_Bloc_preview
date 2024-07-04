@@ -114,11 +114,7 @@ class PointsCounterViewBody extends StatelessWidget {
         );
       },
       listener: (context, state) {
-        if (state is IncreaseCouterA) {
-          BlocProvider.of<CounterCubit>(context).teamACounter;
-        } else if (state is IncreaseCouterB) {
-          BlocProvider.of<CounterCubit>(context).teamBCounter;
-        }
+        
       },
     );
   }

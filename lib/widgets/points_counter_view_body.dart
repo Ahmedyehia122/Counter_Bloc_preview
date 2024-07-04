@@ -3,17 +3,8 @@ import 'package:bascketball_counterapp_copy/widgets/custom_elevated_button.dart'
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class PointsCounterViewBody extends StatefulWidget {
+class PointsCounterViewBody extends StatelessWidget {
   const PointsCounterViewBody({super.key});
-
-  @override
-  State<PointsCounterViewBody> createState() => _PointsCounterViewBodyState();
-}
-
-class _PointsCounterViewBodyState extends State<PointsCounterViewBody> {
-  int counterA = 0;
-
-  int counterB = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -42,17 +33,29 @@ class _PointsCounterViewBodyState extends State<PointsCounterViewBody> {
                           ),
                         ),
                         Text(
-                          'ksss',
+                          '${BlocProvider.of<CounterCubit>(context).teamACounter}',
                           style: const TextStyle(
-                            fontSize: 15,
+                            fontSize: 50,
                           ),
                         ),
                         CustomElevatedButton(
-                            buttonName: 'Add 1 Point ', onPressed: () {}),
+                            buttonName: 'Add 1 Point ',
+                            onPressed: () {
+                              BlocProvider.of<CounterCubit>(context)
+                                  .incrementTeam(team: 'A', buttonNumber: 1);
+                            }),
                         CustomElevatedButton(
-                            buttonName: 'Add 2 Point ', onPressed: () {}),
+                            buttonName: 'Add 2 Point ',
+                            onPressed: () {
+                              BlocProvider.of<CounterCubit>(context)
+                                  .incrementTeam(team: 'A', buttonNumber: 2);
+                            }),
                         CustomElevatedButton(
-                            buttonName: 'Add 3 Point ', onPressed: () {}),
+                            buttonName: 'Add 3 Point ',
+                            onPressed: () {
+                              BlocProvider.of<CounterCubit>(context)
+                                  .incrementTeam(team: 'A', buttonNumber: 3);
+                            }),
                       ],
                     ),
                   ),
@@ -77,17 +80,29 @@ class _PointsCounterViewBodyState extends State<PointsCounterViewBody> {
                           ),
                         ),
                         Text(
-                          ' djd',
+                          '${BlocProvider.of<CounterCubit>(context).teamBCounter}',
                           style: const TextStyle(
-                            fontSize: 15,
+                            fontSize: 50,
                           ),
                         ),
                         CustomElevatedButton(
-                            buttonName: 'Add 1 Point ', onPressed: () {}),
+                            buttonName: 'Add 1 Point ',
+                            onPressed: () {
+                              BlocProvider.of<CounterCubit>(context)
+                                  .incrementTeam(team: 'B', buttonNumber: 1);
+                            }),
                         CustomElevatedButton(
-                            buttonName: 'Add 2 Point ', onPressed: () {}),
+                            buttonName: 'Add 2 Point ',
+                            onPressed: () {
+                              BlocProvider.of<CounterCubit>(context)
+                                  .incrementTeam(team: 'B', buttonNumber: 2);
+                            }),
                         CustomElevatedButton(
-                            buttonName: 'Add 3 Point ', onPressed: () {}),
+                            buttonName: 'Add 3 Point ',
+                            onPressed: () {
+                              BlocProvider.of<CounterCubit>(context)
+                                  .incrementTeam(team: 'B', buttonNumber: 3);
+                            }),
                       ],
                     ),
                   ),
@@ -100,9 +115,9 @@ class _PointsCounterViewBodyState extends State<PointsCounterViewBody> {
       },
       listener: (context, state) {
         if (state is IncreaseCouterA) {
-          counterA = BlocProvider.of<CounterCubit>(context).teamACounter;
+          BlocProvider.of<CounterCubit>(context).teamACounter;
         } else if (state is IncreaseCouterB) {
-          counterB = BlocProvider.of<CounterCubit>(context).teamBCounter;
+          BlocProvider.of<CounterCubit>(context).teamBCounter;
         }
       },
     );

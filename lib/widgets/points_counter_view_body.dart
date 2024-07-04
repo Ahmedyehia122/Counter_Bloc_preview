@@ -1,21 +1,8 @@
 import 'package:bascketball_counterapp_copy/widgets/custom_elevated_button.dart';
 import 'package:flutter/material.dart';
 
-class PointsCounterViewBody extends StatefulWidget {
+class PointsCounterViewBody extends StatelessWidget {
   const PointsCounterViewBody({super.key});
-
-  @override
-  State<PointsCounterViewBody> createState() => _PointsCounterViewBodyState();
-}
-
-class _PointsCounterViewBodyState extends State<PointsCounterViewBody> {
-  int teamAPoints = 0;
-
-  int teamBPoints = 0;
-
-  void addOnePoint() {
-    print('add one point');
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -42,30 +29,17 @@ class _PointsCounterViewBodyState extends State<PointsCounterViewBody> {
                       ),
                     ),
                     Text(
-                      '$teamAPoints',
+                      'ksss',
                       style: const TextStyle(
-                        fontSize: 150,
+                        fontSize: 15,
                       ),
                     ),
                     CustomElevatedButton(
-                        buttonName: 'Add 1 Point ',
-                        onPressed: () {
-                          setState(() {});
-                          teamAPoints++;
-                        }),
+                        buttonName: 'Add 1 Point ', onPressed: () {}),
                     CustomElevatedButton(
-                        buttonName: 'Add 2 Point ',
-                        onPressed: () {
-                          setState(() {});
-                          teamAPoints += 2;
-                        }),
+                        buttonName: 'Add 2 Point ', onPressed: () {}),
                     CustomElevatedButton(
-                        buttonName: 'Add 3 Point ',
-                        onPressed: () {
-                          setState(() {
-                            teamAPoints += 3;
-                          });
-                        }),
+                        buttonName: 'Add 3 Point ', onPressed: () {}),
                   ],
                 ),
               ),
@@ -90,43 +64,23 @@ class _PointsCounterViewBodyState extends State<PointsCounterViewBody> {
                       ),
                     ),
                     Text(
-                      '$teamBPoints',
+                      ' djd',
                       style: const TextStyle(
-                        fontSize: 150,
+                        fontSize: 15,
                       ),
                     ),
                     CustomElevatedButton(
-                        buttonName: 'Add 1 Point ',
-                        onPressed: () {
-                          setState(() {});
-                          teamBPoints++;
-                        }),
+                        buttonName: 'Add 1 Point ', onPressed: () {}),
                     CustomElevatedButton(
-                        buttonName: 'Add 2 Point ',
-                        onPressed: () {
-                          setState(() {});
-                          teamBPoints += 2;
-                        }),
+                        buttonName: 'Add 2 Point ', onPressed: () {}),
                     CustomElevatedButton(
-                        buttonName: 'Add 3 Point ',
-                        onPressed: () {
-                          setState(() {
-                            teamBPoints += 3;
-                          });
-                        }),
+                        buttonName: 'Add 3 Point ', onPressed: () {}),
                   ],
                 ),
               ),
             ],
           ),
-          CustomElevatedButton(
-              buttonName: 'Reset',
-              onPressed: () {
-                setState(() {
-                  teamAPoints = 0;
-                  teamBPoints = 0;
-                });
-              }),
+          CustomElevatedButton(buttonName: 'Reset', onPressed: () {}),
         ],
       ),
     );
